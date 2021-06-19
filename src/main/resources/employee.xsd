@@ -1,0 +1,54 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://com.hrms/hrms"
+	targetNamespace="http://com.hrms/hrms" elementFormDefault="qualified">
+	
+	<xs:element name="getEmployeeRequest" type="tns:getEmployeeRequest"/>
+	<xs:complexType name="getEmployeeRequest">
+		<xs:sequence>
+			<xs:element name="employeeId" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="getEmployeeResponse" type="tns:getEmployeeResponse"/>
+	<xs:complexType name="getEmployeeResponse">
+		<xs:sequence>
+			<xs:element name="employyeDetails" type="tns:employyeDetails"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="getAllEmployeesRequest" type="tns:getAllEmployeesRequest"/>
+	
+	<xs:complexType name="getAllEmployeesRequest"/>
+	
+	<xs:element name="getAllEmployeesResponse" type="tns:getAllEmployeesResponse"/>
+	
+	<xs:complexType name="getAllEmployeesResponse">
+		<xs:sequence>
+			<xs:element name="employyeDetails" type="tns:employyeDetails" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="employyeDetails">
+		<xs:sequence>
+			<xs:element name="employeeId" type="xs:int"/>
+			<xs:element name="employeeName" type="xs:string"/>
+			<xs:element name="location" type="xs:string"/>
+			<xs:element name="zipcode" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="removeEmployeeRequest" type="tns:removeEmployeeRequest"/>
+	
+	<xs:complexType name="removeEmployeeRequest">
+		<xs:sequence>
+			<xs:element name="employeeId" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="removeEmployeeResponse" type="tns:removeEmployeeResponse"/>
+	
+	<xs:complexType name="removeEmployeeResponse">
+		<xs:sequence>
+			<xs:element name="status" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
